@@ -14,9 +14,26 @@
  *
  */
 #include <stdio.h>
+#include <ctype.h>
+
+void convertToUppercase(char *sPtr);
 
 int main() {
-	// printf() displays the string inside quotation
-	printf("Ptr_not_costant_data_not_costant");
+	char s[] = "Hello Davide";
+
+	printf("%s -> ", s);
+	convertToUppercase(s);
+	printf("%s\n", s);
+	
 	return 0;
+}
+
+void convertToUppercase(char *sPtr)
+{
+	while (*sPtr != '\0')
+	{
+		*sPtr = toupper(*sPtr);
+		sPtr++;
+	}
+	
 }
